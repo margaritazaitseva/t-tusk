@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+
+<body>
+<div>
+  <header>
+    <div class="logo">
+      <img src="./img/Logo sign only.svg" alt="">
+      <p class="logo-text">RS-App</p>
+    </div>
+  </header>
+  <div class="info">
+    <div class="container">
+      <h2>Шаг 3</h2>
+      <h3>Прикрепление изображений</h3>
+      <div class="steps">
+        <div class="step first active"></div>
+        <div class="step active"></div>
+        <div class="step third active"></div>
+      </div>
+      <div class="data-cont">
+        <div class="data-form">
+          <h2 class="data-title">Паспорт</h2>
+          <p class="data-title-descr">Старайтесь не закрывать пальцами данные и фотографировать при хорошем освещении</p>
+          <div class="img-inputs">
+            <div class="data-wrapper">
+              <img class="passport" src="./img/photo-pasport.svg" alt="">
+              <div class="text-wrapper">
+                <p>Разворот паспорта с фотографией</p>
+                <div>
+                  <input type="file" id="file-upload-1" style="display: none;">
+                  <label for="file-upload-1" class="upload-btn">Загрузить</label>
+                  <div id="file-info-1" style="display: none;">
+                    <span id="file-name-1"></span>
+                    <button class="delete-btn-1"><img class="data-delete" src="./img/passport-delete.svg" alt=""></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="data-wrapper">
+              <img class="passport" src="./img/pasport-text.svg" alt="">
+              <div class="text-wrapper">
+                <p>Разворот паспорта с пропиской</p>
+                <div>
+                  <input type="file" id="file-upload-2" style="display: none;">
+                  <label for="file-upload-2" class="upload-btn">Загрузить</label>
+                  <div id="file-info-2" style="display: none;">
+                    <span id="file-name-2"></span>
+                    <button class="delete-btn-2"><img class="data-delete" src="./img/passport-delete.svg" alt=""></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+        </div>
+        <div class="data-form">
+          <h2 class="data-title">Ваша фотография</h2>
+          <p class="data-title-descr">Старайтесь не закрывать пальцами данные и фотографировать при хорошем освещении</p>
+          
+        <div class="data-wrapper">
+          <img class="passport" src="./img/photo.svg" alt="">
+          <div class="text-wrapper">
+            <p>Фотография</p>
+            <div>
+              <input type="file" id="file-upload-3" style="display: none;">
+              <label for="file-upload-3" class="upload-btn">Загрузить</label>
+              <div id="file-info-3" style="display: none;">
+                <span id="file-name-3"></span>
+                <button class="delete-btn-3"><img class="data-delete" src="./img/passport-delete.svg" alt=""></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="inputs third-page">
+        <div class="field-wrapper policy">
+          <input id="box" type="checkbox" class='checkbox' />
+          <label for="box">
+            <span class='text'><a class="policy-link" href="#">Соглашаюсь с Правилами заполнения заявки и&nbsp;присоединяюсь к&nbsp;Соглашению об&nbsp;использовании ПЭП
+            </a></span>
+          </label>
+        </div>
+        <a href="./second.html" class="back"><img src="./img/arrow.svg" alt=""> Назад</a>
+        <a  href="./fourth.html" class="button onward">Далее</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer>
+    <p class="footer-title">© 2017 - 2021 АО «Банк Русский Стандарт». </p>
+    <p class="footer-desc">Генеральная лицензия Банка России № 2289 выдана бессрочно 19 ноября 2014 года</p>
+  </footer>
+  <script>
+    function setupFileUpload(inputId, fileInfoId, fileNameId, deleteBtn) {
+      var fileInput = document.getElementById(inputId);
+      var uploadBtn = document.querySelector('label[for="' + inputId + '"]');
+      var fileInfo = document.getElementById(fileInfoId);
+      var fileNameElement = document.getElementById(fileNameId);
+
+
+      fileInput.addEventListener('change', function(e) {
+        var fileName = fileInput.files[0].name;
+        fileNameElement.textContent = fileName;
+        uploadBtn.style.pointerEvents = 'none';
+        fileInfo.style.display = 'flex';
+        uploadBtn.innerHTML = "Загружено";
+        uploadBtn.style.background = 'transparent';
+        uploadBtn.style.color = '#84B245';
+        uploadBtn.style.textAlign = 'left';
+      });
+
+      deleteBtn.addEventListener('click', function() {
+        fileInput.value = '';
+        fileNameElement.textContent = '';
+        uploadBtn.style.pointerEvents = 'auto';
+        uploadBtn.style.opacity = '1';
+        fileInfo.style.display = 'none';
+        uploadBtn.innerHTML = "Загрузить";
+        uploadBtn.style.backgroundColor = '#84B245';
+       uploadBtn.style.color = '#FFFFFF';
+       uploadBtn.style.textAlign = 'center';
+      });
+    }
+
+    setupFileUpload('file-upload-1', 'file-info-1', 'file-name-1', document.querySelector('#file-info-1 .delete-btn-1'));
+    setupFileUpload('file-upload-2', 'file-info-2', 'file-name-2', document.querySelector('#file-info-2 .delete-btn-2'));
+    setupFileUpload('file-upload-3', 'file-info-3', 'file-name-3', document.querySelector('#file-info-3 .delete-btn-3'));
+  </script>
+</body>
+
+</html>
+

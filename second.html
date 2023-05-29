@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+
+<body>
+<div>
+  <header>
+    <div class="logo">
+      <img src="./img/Logo sign only.svg" alt="">
+      <p class="logo-text">RS-App</p>
+    </div>
+  </header>
+
+  <div class="info">
+    <div class="container">
+      <h2>Шаг 2</h2>
+      <h3>Данные о товарной корзине</h3>
+      <div class="steps">
+        <div class="step first active"></div>
+        <div class="step active"></div>
+        <div class="step third"></div>
+      </div>
+      <div class="text-cont">
+        <p class="second-text">Наименование товара</p>
+        <p class="second-text">Стоимость</p>
+      </div>
+      <div class="product">
+        <div class="product-cont">
+        <p class="product-info"><span class="second-text">Наименование товара</span>Велосипед</p>
+        <p class="product-info"><span class="second-text">Стоимость</span>45 630 <span class="currency">₽</span></p>
+      </div>
+        <p class="delete"><img src="./img/delete.svg" alt="">Удалить товар</p>
+        <img class="mob-delete" src="./img/close.svg" alt="">
+      </div>
+      <div class="product">
+        <div class="product-cont">
+        <p class="product-info"><span class="second-text">Наименование товара</span>Стиральная машина</p>
+        <p class="product-info"><span class="second-text">Стоимость</span>25 630 <span class="currency">₽</span></p>
+      </div>
+        <p class="delete"><img src="./img/delete.svg" alt="">Удалить товар</p>
+        <img class="mob-delete" src="./img/close.svg" alt="">
+      </div>
+      <div class="product">
+        <div class="product-cont">
+        <p class="product-info"><span class="second-text">Наименование товара</span>Наушники</p>
+        <p class="product-info"><span class="second-text">Стоимость</span>10 020 <span class="currency">₽</span></p>
+      </div>
+        <p class="delete"><img src="./img/delete.svg" alt="">Удалить товар</p>
+        <img class="mob-delete" src="./img/close.svg" alt="">
+      </div>
+      <div class="product-total">
+        <p class="total">Итого: <span> 147 800.55 руб.</span></p>
+      <button id="btn" class="add"><img src="./img/add.svg" alt=""> Добавить товар</button>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Создать товар</h2>
+        <div class="input-container">
+          <input id="product-name" class="input" type="text" placeholder=" " />
+          <label for="product-name" class="placeholder">Название товара</label>
+        </div>
+        <div class="input-container">
+          <input id="price" class="input" type="text" placeholder=" " />
+          <label for="price" class="placeholder">Стоимость</label>
+        </div>
+        <button class="add-btn">Добавить</button>
+        <div class="close"><img src="./img/close.svg" alt=""></div>
+      </div>
+    </div>
+      <div class="inputs">
+        <a href="./index.html" class="back"><img src="./img/arrow.svg" alt=""> Назад</a>
+        <a href="./third.html" class="button onward">Далее</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer>
+    <p class="footer-title">© 2017 - 2021 АО «Банк Русский Стандарт». </p>
+    <p class="footer-desc">Генеральная лицензия Банка России № 2289 выдана бессрочно 19 ноября 2014 года</p>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+
+</html>
+

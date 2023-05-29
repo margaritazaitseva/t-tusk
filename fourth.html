@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+<div>
+    <header>
+        <div class="logo">
+            <img src="./img/Logo sign only.svg" alt="">
+            <p class="logo-text">RS-App</p>
+        </div>
+    </header>
+    <form action="https://" method="post">
+   <div class="agree-cont first">
+       <h1 class="agree-title">Согласие на дистанционное взаимодействие</h1>
+       <p class="agree-title-descr">Введите код из СМС</p>
+        <div>
+            <input type="text" id="digit1" class="digit-input" maxlength="1">
+            <input type="text" id="digit2" class="digit-input" maxlength="1">
+            <input type="text" id="digit3" class="digit-input" maxlength="1">
+            <input type="text" id="digit4" class="digit-input" maxlength="1">
+        </div>
+       <div class="inputs button-input">
+           <a  href="./fifth.html" class="button onward">Подтвердить</a>
+       </div>
+       <p class="text-small">Отправить СМС повторно можно через 20 сек</p>
+   </div>
+</form>
+</div>
+<footer>
+    <p class="footer-title">© 2017 - 2021 АО «Банк Русский Стандарт». </p>
+    <p class="footer-desc">Генеральная лицензия Банка России № 2289 выдана бессрочно 19 ноября 2014 года</p>
+</footer>
+</body>
+<script>
+    var digit1 = document.getElementById('digit1');
+    var digit2 = document.getElementById('digit2');
+    var digit3 = document.getElementById('digit3');
+    var digit4 = document.getElementById('digit4');
+
+    digit1.addEventListener('input', function() {
+      if (digit1.value.length === 1) {
+        digit2.focus();
+      }
+    });
+
+    digit2.addEventListener('input', function() {
+      if (digit2.value.length === 1) {
+        digit3.focus();
+      }
+    });
+
+    digit3.addEventListener('input', function() {
+      if (digit3.value.length === 1) {
+        digit4.focus();
+      }
+    });
+
+    digit4.addEventListener('input', function() {
+      if (digit4.value.length === 1) {
+        // Perform action when all digits are filled
+        var code = digit1.value + digit2.value + digit3.value + digit4.value;
+        console.log('SMS code entered:', code);
+      }
+    });
+  </script>
+</html>
+
